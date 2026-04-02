@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat Assistant</title>
+    <title>L’Oréal Beauty Advisor</title>
+
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -12,21 +13,39 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <div class="page-wrapper">
-      <!------- Header / Branding ------->
+      <!-- Header / Branding -->
       <header class="site-header">
-        <h1 class="site-title">Smart Product Advisor</h1>
+        <div class="brand-wrap">
+          <img
+            src="loreal-logo.png"
+            alt="L’Oréal logo"
+            class="brand-logo"
+          />
+          <div>
+            <h1 class="site-title">L’Oréal Beauty Advisor</h1>
+            <p class="site-subtitle">
+              Discover products, routines, and personalized beauty recommendations
+            </p>
+          </div>
+        </div>
       </header>
 
-      <!------- Chat Area ------->
+      <!-- Chat Area -->
       <main>
         <section class="chatbox">
+          <div id="currentQuestion" class="current-question"></div>
+
           <div id="chatWindow" class="chat-window">
-            <!-- messages will be appended here via JS -->
+            <div class="message assistant-message">
+              Hi! I’m your L’Oréal Beauty Advisor. Ask me about skincare, makeup,
+              haircare, fragrances, or building a routine.
+            </div>
           </div>
 
           <form id="chatForm" class="chat-form">
@@ -35,7 +54,7 @@
               id="userInput"
               name="userInput"
               type="text"
-              placeholder="Ask me about products or routines…"
+              placeholder="Ask about products, routines, skincare, makeup..."
               autocomplete="off"
               required
             />
@@ -47,11 +66,10 @@
         </section>
       </main>
 
-      <!------- Footer Links ------->
+      <!-- Footer -->
       <footer class="site-footer">
-        <p>&copy; 2025 Company Name. All rights reserved.</p>
+        <p>&copy; 2026 L’Oréal Beauty Advisor. Student project.</p>
         <nav>
-          <!-- These URLs are placeholders -->
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>
           <a href="#">Contact</a>
@@ -59,7 +77,7 @@
       </footer>
     </div>
 
-    <!-- secrets.js can be removed when using Cloudflare Workers for API requests -->
+    <!-- Remove secrets.js after switching to Cloudflare Worker -->
     <script src="secrets.js"></script>
     <script src="script.js"></script>
   </body>
